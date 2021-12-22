@@ -1,0 +1,185 @@
+:root {
+  /* primary */
+  --cyan: hsl(178, 48%, 52%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --dark-green: hsl(179, 61%, 44%);
+
+  /* neutral */
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 83%;
+  margin-block: 7rem;
+  border-radius: 5px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.top-card {
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.top-card h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--dark-green);
+  padding-block: 1rem 1rem;
+}
+
+.top-card .sub {
+  color: var(--bright-yellow);
+  font-weight: 700;
+  padding-bottom: 2rem;
+}
+
+.top-card .desc {
+  color: var(--grayish-blue);
+  font-weight: 400;
+}
+
+.mid-card {
+  background-color: var(--dark-green);
+  padding: 2rem;
+}
+
+.mid-card h2 {
+  color: var(--light-gray);
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding-bottom: 1.5rem;
+}
+
+.mid-card .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mid-card .price .dollar {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--light-gray);
+}
+
+.mid-card .price .month {
+  color: hsla(204, 43%, 93%, 0.7);
+  padding-left: 1rem;
+}
+
+.mid-card p {
+  color: var(--light-gray);
+  padding-bottom: 2.5rem;
+}
+
+.mid-card .btn {
+  text-align: center;
+  background-color: var(--bright-yellow);
+  height: 4.8rem;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.mid-card .btn a {
+  color: var(--light-gray);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.bottom-card {
+  background-color: var(--cyan);
+  padding: 2rem;
+}
+
+.bottom-card h2 {
+  font-size: 1.8rem;
+  color: var(--light-gray);
+  padding-bottom: 1.5rem;
+}
+
+.bottom-card ol {
+  color: hsla(204, 43%, 93%, 0.7);
+  list-style: none;
+}
+
+@media (min-width: 600px) {
+  .container {
+    max-width: 63rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, max-content);
+  }
+
+  .top-card {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    padding: 3.5rem;
+  }
+
+  .top-card h1 {
+    font-size: 2.6rem;
+  }
+
+  .mid-card {
+    grid-column: 1 / 2;
+    grid-row: 2 / -1;
+    padding: 3rem;
+  }
+
+  .mid-card h2,
+  .bottom-card h2 {
+    font-size: 2rem;
+  }
+
+  .bottom-card {
+    grid-column: 2 / -1;
+    grid-row: 2 / -1;
+    padding: 3rem;
+  }
+}
+
+/* attribution */
+.attribution {
+  font-size: 12px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
